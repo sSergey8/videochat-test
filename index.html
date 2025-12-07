@@ -26,18 +26,27 @@
 
         configOverwrite: {
             prejoinPageEnabled: false,
-            disableDeepLinking: true,        // 🚀 отключает мобильную страницу выбора
+            disableDeepLinking: true,
             startWithAudioMuted: true,
-            startWithVideoMuted: false
+            startWithVideoMuted: false,
+
+            // 🚀 Полное отключение страницы ввода имени
+            prejoinConfig: {
+                enabled: false
+            }
         },
 
         interfaceConfigOverwrite: {
-            MOBILE_APP_PROMO: false,         // 🚀 отключает кнопку “Открыть в приложении”
+            MOBILE_APP_PROMO: false,
             NATIVE_APP_NAME: '',
-            DISABLE_JOIN_LEAVE_NOTIFICATIONS: false
+            DISABLE_JOIN_LEAVE_NOTIFICATIONS: false,
+
+            // 🚀 Полное скрытие prejoin UI
+            HIDE_PREJOIN_DISPLAY_NAME: true,
+            HIDE_PREJOIN_HEADER: true
         },
 
-        mobileAppDisplayName: ""             // 🚀 критично для Android
+        mobileAppDisplayName: ""
     });
 </script>
 
