@@ -17,20 +17,27 @@
     const room = "my-test-room-123456";
 
     const api = new JitsiMeetExternalAPI("meet.jit.si", {
-        parentNode: document.getElementById("meet"),
         roomName: room,
+        parentNode: document.getElementById("meet"),
 
         userInfo: {
             displayName: "Guest-" + Math.floor(Math.random() * 10000)
         },
 
         configOverwrite: {
-            prejoinPageEnabled: false
+            prejoinPageEnabled: false,
+            disableDeepLinking: true,        // 🚀 отключает мобильную страницу выбора
+            startWithAudioMuted: true,
+            startWithVideoMuted: false
         },
 
         interfaceConfigOverwrite: {
+            MOBILE_APP_PROMO: false,         // 🚀 отключает кнопку “Открыть в приложении”
+            NATIVE_APP_NAME: '',
             DISABLE_JOIN_LEAVE_NOTIFICATIONS: false
-        }
+        },
+
+        mobileAppDisplayName: ""             // 🚀 критично для Android
     });
 </script>
 
