@@ -25,16 +25,18 @@
         },
 
         configOverwrite: {
-            prejoinPageEnabled: false,
-            disableDeepLinking: true,
-            startWithAudioMuted: true,
-            startWithVideoMuted: false,
+    prejoinPageEnabled: false,
+    disableDeepLinking: true,
 
-            // 🚀 Полное отключение страницы ввода имени
-            prejoinConfig: {
-                enabled: false
-            }
-        },
+    // 🚀 включить камеру и микрофон при входе
+    startWithAudioMuted: false,
+    startWithVideoMuted: false,
+    startSilent: false,
+
+    prejoinConfig: {
+        enabled: false
+    }
+},
 
         interfaceConfigOverwrite: {
             MOBILE_APP_PROMO: false,
