@@ -48,6 +48,17 @@
 
         mobileAppDisplayName: ""
     });
+
+        // 🚀 Правильное завершение сессии Jitsi
+    window.addEventListener("beforeunload", () => api.dispose());
+    window.addEventListener("pagehide", () => api.dispose());
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") {
+            api.dispose();
+        }
+    });
+    
 </script>
 
 </body>
